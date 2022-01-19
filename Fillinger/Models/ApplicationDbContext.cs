@@ -4,7 +4,11 @@ namespace Fillinger.Models
 {
     public class ApplicationDbContext : DbContext
     {
-        protected readonly string ConnectionString;
+        public string ConnectionString { get; set; } = "Server=(localdb)\\mssqllocaldb;Database=XE1RSV;Trusted_Connection=True;MultipleActiveResultSets=true";
+
+        public ApplicationDbContext()
+            : base()
+        { }
 
         public ApplicationDbContext(
             string connectionString
